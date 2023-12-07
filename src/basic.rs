@@ -198,22 +198,7 @@ impl Lexer {
     }
 }
 
-
-
-
-
-fn run(fn_name: &str, text: &str) -> (Vec<Token>, Option<Error>) {
+pub fn run(fn_name: &str, text: &str) -> (Vec<Token>, Option<Error>) {
     let mut lexer = Lexer::new(fn_name, text);
     lexer.make_tokens()
-}
-
-fn main() {
-    let fn_name = "example";
-    let text = "3.14 + 2 * (6 - 4.5)";
-    let (tokens, error) = run(fn_name, text);
-
-    println!("Tokens: {:?}", tokens);
-    if let Some(error) = error {
-        println!("{}", error.as_string());
-    }
 }
